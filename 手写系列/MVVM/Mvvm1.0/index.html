@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="a">
+    <div>Hello，{{a}}</div>
+    <div>{{name}}</div>
+    <button v-on:click="handle">点击</button>
+  </div>
+  <script src="./utils.js"></script>
+  <script src="./dep.js"></script>
+  <script src="./watcher.js"></script>
+  <script src="./observer.js"></script>
+  <script src="./compile.js"></script>
+  <script src="./mvvm.js"></script>
+  <script type="text/javascript">
+    let vue = new Mvvm({
+      el: "#app",
+      data: {
+        a: 1,
+        b: 2,
+      },
+      computed: {
+        name() {
+          return this.a + " World";
+        }
+      },
+      methods: {
+        handle() {
+          this.a = 33;
+        }
+      },
+      mounted() {
+        console.log("loading finished.")
+      },
+      watch: {
+        a(newVal, oldVal) {
+          console.log("name changed", newVal, oldVal);
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>
