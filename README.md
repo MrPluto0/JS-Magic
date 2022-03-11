@@ -22,8 +22,8 @@
   - [x] 寄生式继承
   - [x] 组合寄生式
 - [ ] MVVM like `Vue`
-  - [x] Mvvm1.0 By `Html+JS`
-  - [ ] Mvvm2.0 By `Html+TS+Webpack`
+  - [x] Mvvm1 By `Html+JS`
+  - [ ] Mvvm2 By `Html+TS+Webpack`
 - [x] Promise
 
 ## 设计模式
