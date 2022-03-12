@@ -29,3 +29,18 @@ export function parsePath(exp: string) {
     return val;
   };
 }
+
+export function parsePathSet(exp: string) {
+  return (obj: Object, target: any) => {
+    let arr = exp.split(".");
+    let val = obj;
+
+    arr.forEach((key, _i) => {
+      if (_i === arr.length - 1) {
+        val[key] = target;
+      } else {
+        val = val[key];
+      }
+    });
+  };
+}

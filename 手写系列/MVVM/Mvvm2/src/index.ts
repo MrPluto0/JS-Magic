@@ -2,14 +2,20 @@ import { Mvvm } from "./mvvm";
 
 let vue = new Mvvm({
   el: "#app",
-  template: "<div>{{name}}</div><div>{{sentence}}</div>",
+  template: `<div>My name: {{name}}</div>
+              <div>{{sentence}}</div>
+             <input v-model="name"/>
+             <input :value="age" v-show="show" />
+            <button @click="handle">按钮</button>`,
   data: {
     name: "gypsophlia",
     age: 21,
+    show: false,
   },
   methods: {
     handle() {
       console.log("handle");
+      this.show = !this.show;
     },
   },
   computed: {

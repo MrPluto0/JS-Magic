@@ -37,7 +37,6 @@ Compile.prototype = {
   compileElementNode(node) {
     const attrs = node.attributes;
     Array.from(attrs).forEach((attr) => {
-      const reg = /\{\{(.*?)\}\}/; // 最小匹配
       let name = attr.name;
       let exp = attr.value;
       let dir = name.slice(2);
@@ -82,6 +81,7 @@ Compile.prototype = {
 
     // cb from node to exp
     node.addEventListener("input", (e) => {
+      console.log(e);
       const newVal = e.target.value;
       this.vm[exp] = newVal;
     });

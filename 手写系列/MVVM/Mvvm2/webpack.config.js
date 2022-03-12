@@ -10,7 +10,7 @@ module.exports = {
   },
   devServer: {
     static: { directory: path.join(__dirname, "public") },
-    port: 8888,
+    port: 8080,
     allowedHosts: "all",
     client: {
       logging: "info", // 日志等级
